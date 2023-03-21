@@ -6,6 +6,10 @@
 //Console.WriteLine($"Password: {user.Password}");
 //Console.WriteLine($"N. cellulare: {user.Telefono}");
 
+Biblioteca miaBiblioteca = new Biblioteca();
+miaBiblioteca.ListaDocumenti.Add("Il signore degli anelli");
+miaBiblioteca.ListaDocumenti.Add("Harry Potter e la pietra filosofale");
+
 public class UtenteRegistrato
 {
     public string Cognome { get; set; }
@@ -52,4 +56,15 @@ class Libro : Documento
 class Dvd : Documento
 {
     public TimeSpan length { get; set; }
+}
+
+
+public class Biblioteca
+{
+    public List<string> ListaDocumenti { get; set; }
+
+    public Biblioteca()
+    {
+        ListaDocumenti = new List<string>();
+    }
 }
