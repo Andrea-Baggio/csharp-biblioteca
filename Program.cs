@@ -1,7 +1,10 @@
-﻿UtenteRegistrato utentes = new UtenteRegistrato("Gognome", "Bone", "yoyo98email", "gattiPleonastici", "3456776543");
+﻿//UtenteRegistrato user = new UtenteRegistrato("Cognome", "Nome", "email123", "password1234", "346740284");
 
-Console.WriteLine($"Codice prodotto: {utentes.Cognome}");
-
+//Console.WriteLine($"Cognome: {user.Cognome}");
+//Console.WriteLine($"Nome: {user.Nome}");
+//Console.WriteLine($"Email: {user.Email}");
+//Console.WriteLine($"Password: {user.Password}");
+//Console.WriteLine($"N. cellulare: {user.Telefono}");
 
 public class UtenteRegistrato
 {
@@ -24,7 +27,6 @@ public class UtenteRegistrato
 
 }
 
-
 public class Documento
 {
     public string Codice { get; set; }
@@ -32,4 +34,22 @@ public class Documento
     public string Settore { get; set; }
     public string Scaffale { get; set; }
     public string Autore { get; set; }
+}
+
+
+// guarda la slide 18
+class Libro : Documento
+{
+    public int NumPage { get; set; }
+
+    public Libro(int numPage)
+    {
+        NumPage = numPage;
+    }
+}
+
+
+class Dvd : Documento
+{
+    public TimeSpan length { get; set; }
 }
