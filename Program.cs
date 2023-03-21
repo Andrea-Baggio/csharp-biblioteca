@@ -1,14 +1,10 @@
-﻿//UtenteRegistrato user = new UtenteRegistrato("Cognome", "Nome", "email123", "password1234", "346740284");
+﻿UtenteRegistrato user = new UtenteRegistrato("Cognome", "Nome", "email123", "password1234", "346740284");
 
-//Console.WriteLine($"Cognome: {user.Cognome}");
-//Console.WriteLine($"Nome: {user.Nome}");
-//Console.WriteLine($"Email: {user.Email}");
-//Console.WriteLine($"Password: {user.Password}");
-//Console.WriteLine($"N. cellulare: {user.Telefono}");
-
-Biblioteca miaBiblioteca = new Biblioteca();
-miaBiblioteca.ListaDocumenti.Add("Il signore degli anelli");
-miaBiblioteca.ListaDocumenti.Add("Harry Potter e la pietra filosofale");
+Console.WriteLine($"Cognome: {user.Cognome}");
+Console.WriteLine($"Nome: {user.Nome}");
+Console.WriteLine($"Email: {user.Email}");
+Console.WriteLine($"Password: {user.Password}");
+Console.WriteLine($"N. cellulare: {user.Telefono}");
 
 public class UtenteRegistrato
 {
@@ -41,7 +37,6 @@ public class Documento
 }
 
 
-// guarda la slide 18
 class Libro : Documento
 {
     public int NumPage { get; set; }
@@ -61,10 +56,44 @@ class Dvd : Documento
 
 public class Biblioteca
 {
-    public List<string> ListaDocumenti { get; set; }
+    public List<Documento> ListaDocumenti { get; set; }
+    public List<UtenteRegistrato> ListaUtenti { get; set; }
+
+
 
     public Biblioteca()
     {
-        ListaDocumenti = new List<string>();
+        ListaDocumenti = new List<Documento>();
+        ListaUtenti = new List<UtenteRegistrato>();
+    }
+
+    //public Documento CercaDocumento(string codice)
+    //{
+
+    //    foreach(Documento documento in ListaDocumenti)
+    //    {
+    //        if(documento.Codice == codice)
+    //        {
+    //            return documento;
+    //        }
+    //    }
+
+    //    //non ho trovato niente
+    //    return null;
+    //}
+
+    public Documento CercaDocumento(string titolo)
+    {
+
+        foreach (Documento documento in ListaDocumenti)
+        {
+            if (documento.Titolo == titolo)
+            {
+                return documento;
+            }
+        }
+
+        //non ho trovato niente
+        return null;
     }
 }
